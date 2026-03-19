@@ -15,7 +15,7 @@ export async function GET() {
         lastUsedAt: true,
         createdAt: true,
       },
-      orderBy: (k, { desc }) => [desc(k.createdAt)],
+      orderBy: (k: any, { desc }: any) => [desc(k.createdAt)],
     });
     return NextResponse.json(keys);
   } catch (error) {

@@ -6,7 +6,7 @@ export async function GET() {
   try {
     const allSessions = await db.query.sessions.findMany({
       with: { sessionAgents: { with: { agent: true } } },
-      orderBy: (s, { desc }) => [desc(s.createdAt)],
+      orderBy: (s: any, { desc }: any) => [desc(s.createdAt)],
     });
     return NextResponse.json(allSessions);
   } catch (error) {
