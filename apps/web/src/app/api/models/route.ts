@@ -5,7 +5,7 @@ import { models } from "@repo/db";
 export async function GET() {
   try {
     const allModels = await db.query.models.findMany({
-      orderBy: (m, { asc }) => [asc(m.name)],
+      orderBy: (m: any, { asc }: any) => [asc(m.name)],
     });
     return NextResponse.json(allModels);
   } catch (error) {
