@@ -10,10 +10,12 @@ import {
   Key,
   DollarSign,
   Settings,
+  Search,
 } from "lucide-react";
 
 const navigation = [
   { name: "Dashboard", href: "/", icon: LayoutDashboard },
+  { name: "MegaSearch", href: "/megasearch", icon: Search },
   { name: "Agents", href: "/agents", icon: Bot },
   { name: "Models", href: "/models", icon: Cpu },
   { name: "Sessions", href: "/sessions", icon: MessageSquare },
