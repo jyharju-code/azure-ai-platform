@@ -19,6 +19,7 @@ WORKDIR /app
 COPY --from=deps /app/ ./
 COPY . .
 RUN pnpm install --frozen-lockfile
+ENV DATABASE_URL="postgresql://dummy:dummy@localhost:5432/dummy"
 RUN pnpm --filter @repo/web build
 
 FROM base AS runner
