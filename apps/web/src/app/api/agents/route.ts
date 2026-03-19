@@ -8,7 +8,7 @@ export async function GET() {
     const allAgents = await db.query.agents.findMany({
       where: eq(agents.isActive, true),
       with: { model: true },
-      orderBy: (a, { desc }) => [desc(a.createdAt)],
+      orderBy: (a: any, { desc }: any) => [desc(a.createdAt)],
     });
     return NextResponse.json(allAgents);
   } catch (error) {
